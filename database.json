@@ -1,0 +1,15 @@
+{
+  "init": {
+    "driver": "mysql",
+    "user": "root",
+    "password": "redacted"
+  },
+  "prod": {
+    "driver": "mysql",
+    "user": "root",
+    "host": "db",
+    "password": "redacted",
+    "database": "redacted",
+    "multipleStatements": true
+  }
+}

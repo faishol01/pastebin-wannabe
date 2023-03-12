@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <%- include('_includes/head.ejs', {'title': 'New Note'}); -%>
+  <body>
+    <%- include('_includes/navbar.ejs', {'active_page': 'new_paste'}); -%>
+    <main class="container">
+      <div class="row mt-5">
+        <div class="mx-auto col-6">
+          <h2>Create a new paste</h2>
+          <form class="mt-3" method="POST">
+            <div class="mb-3">
+              <label for="textboxUsername" class="form-label">Title</label>
+              <input type="text" class="form-control" id="textboxUsername" name="paste_title" required>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="textboxContent" class="form-label">Content</label>
+              <textarea class="form-control" id="textboxContent" rows="5" name="paste_content"></textarea>
+            </div>
+            <div class="mb-3 form-group">
+              <label for="pasteVisibility" class="form-label">Visibility</label>
+              <select class="form-select" id="pasteVisibility" name="paste_visibility">
+                <option value="1">Public</option>
+                <option value="0">Private</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <%- include('_includes/footer.ejs'); -%>
+  </body>
+</html>

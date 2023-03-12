@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <%- include('_includes/head.ejs', {'title': 'Home'}); -%>
+  <body>
+    <%- include('_includes/navbar.ejs', {'active_page': 'index'}); -%>
+    <main class="container">
+      <div class="px-4 py-5 my-5 text-center">
+        <img class="d-block mx-auto mb-4" src="/images/pastebin.png" alt="" height="150">
+        <h1 class="display-5 fw-bold">Let's Beat Pastebin</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">Pastebin Wannabe is a platform to store all kind notes. We wanna beat the real pastebin because our platform is ads free forever.</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <% if (users) { %>
+            <a href="/new" class="btn btn-primary btn-lg px-4 gap-3">Start new paste</a>
+            <% } else { %>
+            <a href="/login" class="btn btn-primary btn-lg px-4 gap-3">Log in</a>
+            <a href="/register" class="btn btn-outline-secondary btn-lg px-4">Register</a>
+            <% } %>
+          </div>
+        </div>
+      </div>    
+    </main>
+    <%- include('_includes/footer.ejs'); -%>
+  </body>
+</html>

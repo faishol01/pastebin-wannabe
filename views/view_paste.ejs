@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <%- include('_includes/head.ejs', {'title': paste.title}); -%>
+  <body>
+    <%- include('_includes/navbar.ejs', {'active_page': 'view_paste'}); -%>
+    <main class="container">
+      <div class="row mt-5">
+        <div class="mx-auto col-6">
+          <h2><%= paste.title %></h2>
+          <p>by <strong><%= paste.author %></strong></p>
+          <div class="mt-4 form-group">
+            <textarea class="form-control" id="textboxContent" rows="10" name="paste_content" readonly><%= paste.content %></textarea>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include('_includes/footer.ejs'); -%>
+  </body>
+</html>
