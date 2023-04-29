@@ -50,8 +50,10 @@ router.post('/register', function(req, res, next) {
 
   dbcon.query('INSERT INTO tbl_user(username, password) VALUES(?, ?)', [username, password1],
     function(err, rows, fields){
-      if (err.code == 'ER_DUP_ENTRY') return next('Username is not available. Please choose another username.');
-      if (err) return next('Something went wrong.')
+      if (err) {
+        if (err.code == 'ER_DUP_ENTRY') return next('Username is not available. Please choose another username.');
+        return next('Something went wrong.')
+      }
       res.redirect('/login');    
     }
   );
